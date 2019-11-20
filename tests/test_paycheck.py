@@ -31,7 +31,8 @@ class test_paycheck(unittest.TestCase):
         self.assertEqual(valor_irrf, 29.01)
 
     def test_calcular_dsr(self):
-        self.assertEqual(1,1)
+        valor_dsr = payc.dsr(val_total_horas_extras=104.55, dias_uteis_trabalhados=24, dsr=5)
+        self.assertEqual(valor_dsr, 21.78)
 
     def test_calcular_vale_transporte(self):
         self.assertEqual(1,1)
