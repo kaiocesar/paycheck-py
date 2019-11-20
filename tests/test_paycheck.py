@@ -1,5 +1,5 @@
 import unittest
-import paycheck.src.paycheck as payc
+import paycheckpy.src.paycheck as payc
 
 # Calculo do INSS: 
 # Calculo do FGTS: 
