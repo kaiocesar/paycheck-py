@@ -1,4 +1,5 @@
 import unittest
+import paycheck.src.paycheck as payc
 
 # Calculo do INSS: 
 # Calculo do FGTS: 
@@ -13,16 +14,21 @@ import unittest
 class test_paycheck(unittest.TestCase):
 
     def test_calcular_inss(self):
-        self.assertEqual(1,1)
+        valor_inss = payc.inss(salario_base=3000)
+        self.assertEqual(valor, 300)
 
     def test_calcular_fgts(self):
-        self.assertEqual(1,1)
+        valor_fgts = payc.fgts(salario_base=3000)
+        self.assertEqual(valor_fgts, 240)
 
     def test_calcular_dependentes(self):
-        self.assertEqual(1,1)
+        valor_dependentes = payc.dependentes(2)
+        self.assertEqual(valor_dependentes, 379.18)
     
     def test_calcular_irrf(self):
-        self.assertEqual(1,1)
+        valor_inss = payc.inss(salario_base=3000)
+        valor_irrf = payc.irrf(inss=valor_inss, salario_base=3000)
+        self.assertEqual(valor_irrf, 29.01)
 
     def test_calcular_dsr(self):
         self.assertEqual(1,1)
