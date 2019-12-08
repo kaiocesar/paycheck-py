@@ -1,15 +1,6 @@
 import unittest
-import paycheckpy.src.paycheck as payc
+from paycheckpy.src.paycheck import PayCheckPy as payc
 
-# Calculo do INSS: 
-# Calculo do FGTS: 
-# Calculo de dependentes: 
-# Calculo do IRRF
-# Calcular DSR (Descanso Semanal Remunerado)
-# Calculo de vale transporte
-# Calculo de adicional noturno
-# Calcular adicional insalubridade
-# Calcular Salario Liquido
 
 class test_paycheck(unittest.TestCase):
 
@@ -49,7 +40,10 @@ class test_paycheck(unittest.TestCase):
         self.assertEqual(valor_adicional_noturno, 10)
 
     def test_calcular_adicional_insalubridade(self):
-        self.assertEqual(1,1)
+        valor_insalubridade = payc.insalubridade(grau_insalubridade=20)
+        self.assertEqual(valor_insalubridade, 199.60)
 
     def test_calcular_salario_liquido(self):
-        self.assertEqual(1,1)
+        salario_base = 3000
+        salario_liquido = payc.salario_liquido(salario_base=salario_base)
+        self.assertEqual(salario_liquido, 2760.8)
