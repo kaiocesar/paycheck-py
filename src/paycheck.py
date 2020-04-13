@@ -1,5 +1,8 @@
 
 class PayCheckPy:
+    def init(salario_base):
+        self.salario_base
+
     def inss(salario_base):
         pass
 
